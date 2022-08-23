@@ -8,10 +8,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -21,10 +18,15 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role.Companion.Button
+import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import java.nio.file.Files.size
 import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
@@ -43,12 +45,11 @@ fun screenShow()
 }
 
 @Composable
-fun imageButton()
+fun imgButton()
 {
 
     //Full screen tux button with text
 
-    val random : Double = Random.nextDouble()
 
     Button(onClick = { /*TODO*/ },
         modifier = Modifier,
@@ -73,6 +74,28 @@ fun imageButton()
 
 
 }
+
+@Composable
+fun imageButton()
+{
+
+    androidx.compose.material.Button(onClick = { /*TODO*/ },
+       colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.teal))
+    
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .padding(top = 5.dp, bottom = 5.dp)
+
+        ) {
+            Image(painter = painterResource(id = R.drawable.tux), "Tux Is Happy")
+            Text(text = "Click the happy penguin", fontSize = 23.sp)
+
+        }
+    }
+}
+
 
 @Composable
 @Preview (showBackground = true , showSystemUi = true)
