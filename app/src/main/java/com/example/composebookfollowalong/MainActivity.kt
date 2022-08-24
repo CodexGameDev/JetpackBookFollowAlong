@@ -45,7 +45,6 @@ fun imgButton()
 
     //Full screen tux button with text
 
-
     Button(onClick = { /*TODO*/ },
         modifier = Modifier,
         colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.teal_200) )
