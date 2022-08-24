@@ -38,23 +38,52 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 
+
+
+
 Column(
     modifier = Modifier
-        .fillMaxSize()
+        .fillMaxHeight()
+        .fillMaxWidth()
+
+    ,
 
 ) {
 
-    Column() {
+
+    var color = remember {
+        mutableStateOf(Color.Red)
+    }
+
+    Row() {
 
 
-          colorChangingBox()
 
-            }
+
+
+
+        colorChangingBox() {
+            color.value = it
         }
     }
 
+    Row() {
+
+
+        Box(modifier = Modifier
+            .background(color = color.value)
+            .fillMaxHeight()
+            .fillMaxWidth())
+
+            }
+
+}
+
+        }
     }
 }
+
+
 
 
 @Composable
@@ -137,15 +166,16 @@ androidx.compose.material.Button(onClick = { /*TODO*/ },
 }
 
 @Composable
-fun colorChangingBox()
+fun colorChangingBox(colorUpdate : (Color) -> Unit)
 {
-  var color =  remember {
-        mutableStateOf(Color.Red)
-    }
 
-    Box(modifier = Modifier.background(color.value).fillMaxSize()
+
+    Box(modifier = Modifier
+        .background(Color.Red)
+        .fillMaxHeight(.5f)
+        .fillMaxWidth()
         .clickable {
-            color.value = Color(Random.nextFloat(),Random.nextFloat(),Random.nextFloat())
+            colorUpdate(Color(Random.nextFloat(), Random.nextFloat(), Random.nextFloat()))
 
         }
 
