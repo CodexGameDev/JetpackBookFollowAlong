@@ -33,16 +33,11 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-               screenShow()
+            tuxButton()
             }
         }
 }
 
-@Composable
-fun screenShow()
-{
-    imageButton()
-}
 
 @Composable
 fun imgButton()
@@ -98,9 +93,39 @@ fun imageButton()
 
 
 @Composable
+fun tuxButton()
+{
+androidx.compose.material.Button(onClick = { /*TODO*/ },
+    modifier = Modifier
+
+        .fillMaxHeight(.4f)
+        .fillMaxWidth(.5f),
+    colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.teal_700))
+
+)
+{
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+        ,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+
+    )
+    {
+        Image(painter = painterResource(id = R.drawable.tux), contentDescription = "Tux Image")
+        Text(text = "Click on Tux!!")
+    }
+}
+}
+
+
+
+
+@Composable
 @Preview (showBackground = true , showSystemUi = true)
 
 fun preview()
 {
-    screenShow()
+    tuxButton()
 }
