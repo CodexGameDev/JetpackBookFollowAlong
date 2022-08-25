@@ -17,6 +17,7 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -37,53 +38,51 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            var colorChange = remember {
+                mutableStateOf(Color.Red)
+            }
 
+            Column(modifier = Modifier.fillMaxSize()) {
+                Box(
+                    modifier = Modifier
+                        .background(colorChange.value)
+                        .fillMaxSize(.6f)
 
+                )
+                {
 
-
-Column(
-    modifier = Modifier
-        .fillMaxHeight()
-        .fillMaxWidth()
-
-    ,
-
-) {
-
-
-    var color = remember {
-        mutableStateOf(Color.Red)
-    }
-
-    Row() {
-
-
-
-
-
-
-        colorChangingBox() {
-            color.value = it
-        }
-    }
-
-    Row() {
-
-
-        Box(modifier = Modifier
-            .background(color = color.value)
-            .fillMaxHeight()
-            .fillMaxWidth())
+                }
+                ClickToChangeColor()
+                {
+                    colorChange.value = it
+                }
 
             }
 
-}
-
 
         }
     }
 }
 
+
+
+@Composable
+fun colorChangingBox(colorUpdate : (Color) -> Unit)
+{
+
+
+    Box(modifier = Modifier
+        .background(Color.Red)
+        .fillMaxHeight(.5f)
+        .fillMaxWidth()
+        .clickable {
+            colorUpdate(Color(Random.nextFloat(), Random.nextFloat(), Random.nextFloat()))
+
+        }
+
+    )
+
+}
 
 
 
@@ -166,22 +165,25 @@ androidx.compose.material.Button(onClick = { /*TODO*/ },
 }
 }
 
+
+
 @Composable
-fun colorChangingBox(colorUpdate : (Color) -> Unit)
+fun ClickToChangeColor(ChangeColor : (Color) -> Unit)
 {
-
-
     Box(modifier = Modifier
-        .background(Color.Red)
-        .fillMaxHeight(.5f)
-        .fillMaxWidth()
+        .fillMaxSize()
+        .background(Color.Blue)
         .clickable {
-            colorUpdate(Color(Random.nextFloat(), Random.nextFloat(), Random.nextFloat()))
-
+            ChangeColor(
+                Color(Random.nextFloat(),Random.nextFloat(),Random.nextFloat())
+            )
         }
 
-        )
+
+    )
+    {
+
+    }
+
 
 }
-
-
