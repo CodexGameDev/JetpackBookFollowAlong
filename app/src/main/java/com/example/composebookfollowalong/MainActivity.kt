@@ -177,7 +177,7 @@ fun ClickToChangeColor(ChangeColor : (Color) -> Unit)
         .background(Color.Blue)
         .clickable {
             ChangeColor(
-                Color(Random.nextFloat(),Random.nextFloat(),Random.nextFloat())
+                Color(Random.nextFloat(), Random.nextFloat(), Random.nextFloat())
             )
         }
 
@@ -185,7 +185,39 @@ fun ClickToChangeColor(ChangeColor : (Color) -> Unit)
     )
     {
 
+
     }
 
 
+}
+
+
+
+@Composable
+@Preview (    name = "BlueBox" , showSystemUi = true)
+fun BlueBoxPrev(
+
+)
+{
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .background(Color.Blue))
+    {
+        Text(text = "Test")
+    }
+}
+
+
+@Composable
+@Preview (    name = "RedBox" , showSystemUi = true)
+fun RedBoxPrev(
+
+)
+{
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .background(Color.Red))
+    {
+        Text(text = "Test")
+    }
 }
