@@ -4,6 +4,7 @@ package com.example.composebookfollowalong
 import android.graphics.ColorFilter
 import android.graphics.fonts.FontStyle
 import android.os.Bundle
+import android.widget.EditText
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
@@ -41,26 +42,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            var colorChange = remember {
-                mutableStateOf(Color.Red)
-            }
+            PreviewButonTesting()
 
-            Column(modifier = Modifier.fillMaxSize()) {
-                Box(
-                    modifier = Modifier
-                        .background(colorChange.value)
-                        .fillMaxSize(.6f)
-
-                )
-                {
-
-                }
-                ClickToChangeColor()
-                {
-                    colorChange.value = it
-                }
-
-            }
 
 
 
@@ -261,6 +244,46 @@ fun PreviewButonTesting()
     )
     {
 
-    ButtonTestingAndText()
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+
+        ) {
+
+
+        var textBoxVal = remember {
+            mutableStateOf("")
+        }
+    EnterText()
+    {
+        textBoxVal.value = it
     }
+        Text(text = textBoxVal.value)
+
+    }
+    }
+}
+
+
+@Composable
+fun EnterText(returnVal : (String) -> Unit)
+{
+    var txtInput = remember {
+        mutableStateOf("")
+    }
+
+    TextField(value = txtInput.value, onValueChange =  {
+        txtInput.value = it
+        returnVal(txtInput.value)
+
+
+
+    }
+
+
+
+    )
+
+
+
 }
