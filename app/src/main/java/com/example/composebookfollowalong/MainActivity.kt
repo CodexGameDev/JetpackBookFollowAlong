@@ -265,6 +265,7 @@ fun PreviewButonTesting()
 }
 
 
+
 @Composable
 fun EnterText(returnVal : (String) -> Unit)
 {
