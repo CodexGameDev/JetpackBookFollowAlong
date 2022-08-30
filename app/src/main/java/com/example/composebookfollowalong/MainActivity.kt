@@ -237,6 +237,7 @@ fun ButtonTestingAndText()
         ,
         colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id =   R.color.teal)),
         shape = RoundedCornerShape(20)
+
     ) {
 
 
