@@ -42,11 +42,20 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            PreviewButonTesting()
+            var inputTxt = remember {
+                mutableStateOf("")
+            }
+            Column(modifier = Modifier.fillMaxSize(.5f)) {
+                TextInput()
+                {
+                    if(it.length < 5) {
+                        inputTxt.value = it
+                    }
 
+                }
 
-
-
+                Text(text = inputTxt.value)
+        }
         }
     }
 }
