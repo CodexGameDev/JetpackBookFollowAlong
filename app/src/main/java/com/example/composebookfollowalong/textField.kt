@@ -34,6 +34,7 @@ fun DefaultPreview() {
         }
 
         Text(text = inputTxt.value)
+
     }
 
 }
