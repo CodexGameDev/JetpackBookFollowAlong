@@ -49,5 +49,6 @@ fun TextInput(returnVal : (String) -> Unit)
     {
         txtValue.value = it
         returnVal(it)
+
     } )
 }
