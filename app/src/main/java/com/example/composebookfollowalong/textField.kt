@@ -40,7 +40,24 @@ fun DefaultPreview() {
 }
 
 @Composable
-fun TextInput(returnVal : (String) -> Unit)
+fun TextInput(txtVal : (String) -> Unit)
+{
+    var value1 = remember {
+        mutableStateOf("")
+    }
+
+    TextField(value = value1.value, onValueChange =
+    {
+        value1.value = it
+        txtVal(it)
+    }, label = {Text(text = "Password")}
+    )
+}
+
+
+
+@Composable
+fun TextInput1(returnVal : (String) -> Unit)
 {
     var txtValue = remember {
         mutableStateOf("")
@@ -50,7 +67,7 @@ fun TextInput(returnVal : (String) -> Unit)
         txtValue.value = it
         returnVal(it)
 
-    } 
-    
+    }
+
     )
 }
