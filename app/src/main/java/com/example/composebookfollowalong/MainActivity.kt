@@ -55,7 +55,9 @@ class MainActivity : ComponentActivity() {
                 }
 
                 Text(text = inputTxt.value)
-        }
+
+            }
+
         }
     }
 }

@@ -45,10 +45,12 @@ fun TextInput(returnVal : (String) -> Unit)
     var txtValue = remember {
         mutableStateOf("")
     }
-    TextField(value = txtValue.value, onValueChange =
+    TextField(value = txtValue.value, label = { Text(text = "Username")}, onValueChange =
     {
         txtValue.value = it
         returnVal(it)
 
-    } )
+    } 
+    
+    )
 }
