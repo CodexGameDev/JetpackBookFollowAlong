@@ -62,6 +62,7 @@ class MainActivity : ComponentActivity() {
            }
 
 
+
             ImageTux(paint = painterResource(id = imageInt.value))
             {
                 var rnd = Random.nextFloat()
