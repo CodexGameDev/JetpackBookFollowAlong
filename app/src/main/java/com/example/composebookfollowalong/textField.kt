@@ -63,19 +63,6 @@ fun TextInput(txtVal : (String) -> Unit)
 
 }
 
-@Composable
-fun ImageTux(paint: Painter, changeImage : (String) -> Unit)
-{
-    var counter = remember {
-        mutableStateOf(0)
-    }
-    androidx.compose.foundation.Image(painter = paint, contentDescription = "This is Tux" , contentScale = ContentScale.Crop,modifier =
-    Modifier.clickable {
-        counter.value += 1
-        changeImage( counter.toString())
-
-    } .fillMaxSize())
-}
 
 
 @Composable
@@ -92,4 +79,28 @@ fun TextInput1(returnVal : (String) -> Unit)
     }
 
     )
+}
+
+
+@Composable
+fun EnterText(returnVal : (String) -> Unit)
+{
+    var txtInput = remember {
+        mutableStateOf("")
+    }
+
+    TextField(value = txtInput.value, onValueChange =  {
+        txtInput.value = it
+        returnVal(txtInput.value)
+
+
+
+    }
+
+
+
+    )
+
+
+
 }
