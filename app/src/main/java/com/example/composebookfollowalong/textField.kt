@@ -17,6 +17,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composebookfollowalong.ui.theme.ComposeBookFollowAlongTheme
@@ -68,12 +69,12 @@ fun ImageTux(paint: Painter, changeImage : (String) -> Unit)
     var counter = remember {
         mutableStateOf(0)
     }
-    androidx.compose.foundation.Image(painter = paint, contentDescription = "This is Tux" , modifier =
+    androidx.compose.foundation.Image(painter = paint, contentDescription = "This is Tux" , contentScale = ContentScale.Crop,modifier =
     Modifier.clickable {
         counter.value += 1
         changeImage( counter.toString())
 
-    })
+    } .fillMaxSize())
 }
 
 
