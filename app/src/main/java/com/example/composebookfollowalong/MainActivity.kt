@@ -1,6 +1,7 @@
 
 package com.example.composebookfollowalong
 
+import BoxMod
 import android.graphics.ColorFilter
 import android.graphics.fonts.FontStyle
 import android.os.Bundle
@@ -42,46 +43,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-           /**var inputTxt = remember {
-                mutableStateOf("")
-            }
-            Column(modifier = Modifier.fillMaxSize(.5f)) {
-                TextInput()
-                {
-                    if(it.length < 5) {
-                        inputTxt.value = it
-                    }
-
-                }
-
-                Text(text = inputTxt.value)
-
-            }**/
-            var imageInt = remember {
-               mutableStateOf(R.drawable.tux)
-           }
+            BoxMod()
 
 
-
-            ImageTux(paint = painterResource(id = imageInt.value))
-            {
-                var rnd = Random.nextFloat()
-                if(rnd < .1)
-                {
-                    imageInt.value = R.drawable.ic_launcher_background
-                }
-                else if(rnd < .2){
-                    imageInt.value = R.drawable.ic_launcher_foreground
-                }
-                else if(rnd < .3)
-                {
-                    imageInt.value = R.drawable.ic_channel_foreground
-                }
-                else
-                {
-                    imageInt.value = R.drawable.tux
-                }
-            }
 
 
         }
