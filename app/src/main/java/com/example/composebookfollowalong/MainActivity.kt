@@ -58,5 +58,5 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainPreview()
 {
-    BoxMod()
+    RowTest()
 }
