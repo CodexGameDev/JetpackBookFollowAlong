@@ -38,6 +38,7 @@ fun RowTest()
                 Text(text = "Text 2")
             }
 
+
               Column() {
                   Box(
                       modifier = Modifier
