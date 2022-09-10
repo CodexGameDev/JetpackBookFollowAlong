@@ -43,6 +43,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
             MainPreview()
 
 
@@ -58,5 +59,5 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainPreview()
 {
-    ColumnTest()
+    BoxTest()
 }

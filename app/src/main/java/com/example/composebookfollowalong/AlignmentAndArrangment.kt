@@ -9,19 +9,24 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -140,6 +145,31 @@ fun ColumnTest()
 
     }
 }
+@Composable
+fun BoxTest()
+{
+    Box()
+    {
+        Surface(modifier = Modifier
+            .size(32.dp),
+            color = Color.Green,
+            shape = CircleShape,
+            content = {
+
+            })
+
+
+
+            Text(text = "+" , modifier = Modifier.align(Alignment.Center))
+
+
+
+
+
+    }
+}
+
+
 
 
 
@@ -147,5 +177,5 @@ fun ColumnTest()
 @Preview(showBackground = true, showSystemUi = true)
 fun Preview()
 {
-    ColumnTest()
+    BoxTest()
 }
