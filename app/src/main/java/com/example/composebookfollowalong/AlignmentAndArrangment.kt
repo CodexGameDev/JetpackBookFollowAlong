@@ -146,27 +146,25 @@ fun ColumnTest()
     }
 }
 @Composable
-fun BoxTest()
+fun BoxTest(size : Float)
 {
-    Box()
-    {
-        Surface(modifier = Modifier
-            .size(32.dp),
-            color = Color.Green,
-            shape = CircleShape,
-            content = {
+   Box(modifier = Modifier)
+   {
+       androidx.compose.material.Surface(
+           color = Color.Red,
+           shape = CircleShape,
 
-            })
-
-
-
-            Text(text = "+" , modifier = Modifier.align(Alignment.Center))
-
-
-
-
-
-    }
+           modifier = Modifier.size(size.dp).align(Alignment.Center)
+       ) {
+       }
+       
+       Text(text = "+" , modifier = Modifier.align(Alignment.Center), fontSize = (size / 2).sp)
+       
+       
+       
+       
+       
+   }
 }
 
 
@@ -177,5 +175,5 @@ fun BoxTest()
 @Preview(showBackground = true, showSystemUi = true)
 fun Preview()
 {
-    BoxTest()
+    BoxTest(90f)
 }
