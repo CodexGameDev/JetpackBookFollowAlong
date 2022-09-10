@@ -21,7 +21,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.graphics.rotationMatrix
 import java.security.cert.TrustAnchor
-
+//ToDo Create column test for the alignment and arrangment bc I am a bit confused about it.
 @Composable
 fun RowTest()
 {
