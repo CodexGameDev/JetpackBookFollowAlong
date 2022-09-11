@@ -14,11 +14,6 @@
         android:theme="@style/Theme.ComposeBookFollowAlong"
         tools:targetApi="31">
         <activity
-            android:name=".textField"
-            android:exported="false"
-            android:label="@string/title_activity_text_field"
-            android:theme="@style/Theme.ComposeBookFollowAlong" />
-        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
@@ -30,5 +25,6 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
