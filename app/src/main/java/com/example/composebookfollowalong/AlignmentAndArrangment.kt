@@ -154,7 +154,9 @@ fun BoxTest(size : Float)
            color = Color.Red,
            shape = CircleShape,
 
-           modifier = Modifier.size(size.dp).align(Alignment.Center)
+           modifier = Modifier
+               .size(size.dp)
+               .align(Alignment.Center)
        ) {
        }
        
@@ -169,11 +171,26 @@ fun BoxTest(size : Float)
 
 
 
+@Composable
+fun BoxTest1()
+{
+    Box()
+    {
+        androidx.compose.material.Surface(shape = CircleShape, color = colorResource(id = R.color.teal),
+        modifier = Modifier.size(25.dp).align(Alignment.Center)
+            )
+        {
+            
+        }
+        Text(text = "+" , textAlign = TextAlign.Center, modifier = Modifier.align(Alignment.Center))
+    }
+}
+
 
 
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
 fun Preview()
 {
-    BoxTest(90f)
+    BoxTest1()
 }
