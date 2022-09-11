@@ -177,7 +177,7 @@ fun BoxTest1()
     Box()
     {
         androidx.compose.material.Surface(shape = CircleShape, color = colorResource(id = R.color.teal),
-        modifier = Modifier.size(25.dp).align(Alignment.Center)
+        modifier = Modifier.size(25.dp).align(Alignment.Center).padding(1.dp).background(Color.Red)
             )
         {
             
