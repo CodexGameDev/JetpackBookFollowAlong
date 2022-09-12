@@ -35,14 +35,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainPreview()
 {
-    var returnedString = remember {
-        mutableStateOf("")
-    }
-    ReturnString()
-    {
-        returnedString.value = it
-    }
-    Text(text = returnedString.value)
+
 }
 
 
