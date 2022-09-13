@@ -29,7 +29,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainPreview()
 {
-  ReturnScrollableFloatColumn(lines = 10)
+  ScrollComposable(numChars = 100 , true)
+    ScrollComposable(numChars = 100 , false)
 }
 
 
