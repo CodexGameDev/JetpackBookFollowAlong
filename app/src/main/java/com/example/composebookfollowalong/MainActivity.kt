@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainPreview()
 {
-  CardTest()
+  BoxTest1()
 
 }
 

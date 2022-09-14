@@ -5,13 +5,14 @@ import androidx.compose.animation.core.animate
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.slideIn
 import androidx.compose.animation.slideOut
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.primarySurface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -21,6 +22,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
@@ -176,13 +178,19 @@ fun BoxTest1()
 {
     Box()
     {
-        androidx.compose.material.Surface(shape = CircleShape, color = colorResource(id = R.color.teal),
-        modifier = Modifier.size(25.dp).align(Alignment.Center).padding(1.dp).background(Color.Red)
+        androidx.compose.material.Surface(
+            shape = RoundedCornerShape(8.dp),
+            color = MaterialTheme.colors.primarySurface,
+            border = BorderStroke(2.dp, MaterialTheme.colors.secondary),
+            modifier = Modifier
+                .size(65.dp , 25.dp)
+                .align(Alignment.Center)
+
             )
         {
             
         }
-        Text(text = "+" , textAlign = TextAlign.Center, modifier = Modifier.align(Alignment.Center))
+        Text(text = "Example" , textAlign = TextAlign.Center, modifier = Modifier.align(Alignment.Center), color = MaterialTheme.colors.onPrimary)
     }
 }
 
