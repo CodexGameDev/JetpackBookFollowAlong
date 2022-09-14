@@ -2,6 +2,7 @@ package com.example.composebookfollowalong
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material.Card
 import androidx.compose.runtime.*
 import androidx.compose.ui.tooling.preview.Preview
 
@@ -29,8 +30,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainPreview()
 {
-  ScrollComposable(numChars = 100 , true)
-    ScrollComposable(numChars = 100 , false)
+  CardTest()
+
 }
 
 
