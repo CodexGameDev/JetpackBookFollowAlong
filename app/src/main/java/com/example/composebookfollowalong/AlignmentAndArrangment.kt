@@ -1,11 +1,10 @@
 package com.example.composebookfollowalong
 
-import androidx.compose.animation.EnterTransition
-import androidx.compose.animation.core.animate
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.slideIn
-import androidx.compose.animation.slideOut
-import androidx.compose.foundation.*
+
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -28,6 +27,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -164,9 +164,10 @@ fun BoxTest(size : Float)
        
        Text(text = "+" , modifier = Modifier.align(Alignment.Center), fontSize = (size / 2).sp)
        
+/*       Commenting outlines
+       By selecting them and using shortcut
        
-       
-       
+       */
        
    }
 }
@@ -178,15 +179,7 @@ fun BoxTest1()
 {
     Box()
     {
-        androidx.compose.material.Surface(
-            shape = RoundedCornerShape(8.dp),
-            color = MaterialTheme.colors.primarySurface,
-            border = BorderStroke(2.dp, MaterialTheme.colors.secondary),
-            modifier = Modifier
-                .size(65.dp , 25.dp)
-                .align(Alignment.Center)
-
-            )
+      
         {
             
         }
