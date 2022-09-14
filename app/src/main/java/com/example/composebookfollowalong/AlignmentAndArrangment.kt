@@ -150,6 +150,7 @@ fun ColumnTest()
 @Composable
 fun BoxTest(size : Float)
 {
+
    Box(modifier = Modifier)
    {
        androidx.compose.material.Surface(
@@ -163,12 +164,11 @@ fun BoxTest(size : Float)
        }
        
        Text(text = "+" , modifier = Modifier.align(Alignment.Center), fontSize = (size / 2).sp)
-       
-/*       Commenting outlines
+/*
+       Commenting outlines
        By selecting them and using shortcut
        
        */
-       
    }
 }
 
