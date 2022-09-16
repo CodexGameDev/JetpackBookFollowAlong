@@ -33,6 +33,7 @@ fun AllText()
 }
 
 
+
 @Composable
 fun HeadingText1(text : String)
 {
