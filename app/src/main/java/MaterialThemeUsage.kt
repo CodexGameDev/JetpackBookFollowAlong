@@ -48,7 +48,6 @@ fun HeadingText2(text : String)
     Text(text = text, style = MaterialTheme.typography.h2, modifier = Modifier, maxLines = 1)
 
 }
-
 @Composable
 fun HeadingText3(text : String)
 {
