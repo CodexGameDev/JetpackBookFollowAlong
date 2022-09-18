@@ -14,6 +14,7 @@ import coil.request.ImageRequest
 import coil.size.Scale
 import coil.transform.CircleCropTransformation
 import com.example.composebookfollowalong.ui.theme.imageButton
+import java.net.URL
 
 data class WebImg(val name: String, val imageUrl: String)
 
@@ -59,7 +60,7 @@ fun WebImgConstructor(name : String, url : String)
 
 
 @Composable
-fun LoadImage2( URLval : String , returnVal : (String) -> Unit)
+fun LoadImage2( intVersion : Int, URLval : String , returnVal : (String) -> Unit )
 {
 
     var painterVar = rememberImagePainter(
@@ -69,8 +70,9 @@ fun LoadImage2( URLval : String , returnVal : (String) -> Unit)
         contentDescription = URLval,
         modifier = Modifier.clickable
         {
-            var temp = URLval.substring(0,URLval.length-2)
-            temp = temp + (URLval[URLval.length - 1].toInt() )
+            var temp = URLval.substring(0,URLval.length-1)
+            temp += intVersion
+
             returnVal(temp)
         }
     )

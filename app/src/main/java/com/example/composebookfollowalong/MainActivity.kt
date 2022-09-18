@@ -35,8 +35,16 @@ fun MainPreview()
     var URL = remember {
         mutableStateOf("https://picsum.photos/200")
     }
-  LoadImage2(URLval = URL.value){
+    var iteration = remember {
+        mutableStateOf(0)
+    }
+  LoadImage2( iteration.value , URLval = URL.value){
       URL.value = it
+      iteration.value += 1
+      if(iteration.value == 2)
+      {
+          iteration.value = 0
+      }
   }
 
     Text(text = URL.value)
