@@ -1,7 +1,4 @@
 package com.example.composebookfollowalong
-
-
-
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
