@@ -38,13 +38,10 @@ fun MainPreview()
     var iteration = remember {
         mutableStateOf(0)
     }
-  LoadImage2( iteration.value , URLval = URL.value){
+  LoadImage2( URL.value){
       URL.value = it
       iteration.value += 1
-      if(iteration.value == 2)
-      {
-          iteration.value = 0
-      }
+
   }
 
     Text(text = URL.value)
