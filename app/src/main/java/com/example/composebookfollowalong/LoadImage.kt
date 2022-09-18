@@ -10,11 +10,13 @@ import androidx.compose.ui.res.painterResource
 import coil.ImageLoader
 import coil.compose.ImagePainter
 import coil.compose.rememberImagePainter
+import coil.request.CachePolicy
 import coil.request.ImageRequest
 import coil.size.Scale
 import coil.transform.CircleCropTransformation
 import com.example.composebookfollowalong.ui.theme.imageButton
 import java.net.URL
+import java.security.Policy
 
 data class WebImg(val name: String, val imageUrl: String)
 
@@ -60,27 +62,43 @@ fun WebImgConstructor(name : String, url : String)
 
 
 @Composable
-fun LoadImage2( intVersion : Int, URLval : String , returnVal : (String) -> Unit )
+fun LoadImage2( URLval : String , returnVal : (String) -> Unit )
 {
 
-    var painterVar = rememberImagePainter(
-    data = URLval)
+// This uses the coil library to create a persistent image ie. rememberImagePainter. This is used to query the webImg object URL that was passed to the function. Until it gets the image in return it shows the placeholder image.
+    Image(
+        painter = rememberImagePainter(
+            data = URLval,
 
-    Image(painter = painterVar  ,
+            builder = {
+                scale(Scale.FILL)
+                placeholder(R.drawable.tux)
+                transformations(CircleCropTransformation())
+                //This disables image saving in storage
+                diskCachePolicy(CachePolicy.DISABLED)
+                //This disables image saving in memory
+                memoryCachePolicy(policy = CachePolicy.DISABLED)
+
+
+            }
+        ),
         contentDescription = URLval,
-        modifier = Modifier.clickable
-        {
-            var temp = URLval.substring(0,URLval.length-1)
-            temp += intVersion
+        modifier = Modifier
+            .fillMaxHeight()
+            .clickable
+            {
+                //This is used to always change the URL from the last one. This is done because the data is not cached anywhere, but is currently saved in the remember. As soon as the remember updates then the old one will be completely forgotten.
+                if(URLval[URLval.length - 1].toString() == "0")
+                {
+                returnVal(URLval.substring(0, URLval.length - 1) + "1")
+                }
+                else
+                {
+                    returnVal(URLval.substring(0, URLval.length - 1) + "0")
+                }
+            }
 
-            returnVal(temp)
-        }
     )
 
-
-}
-
-fun ResetImage(remember1ImagePainter : ImagePainter)
-{
 
 }
