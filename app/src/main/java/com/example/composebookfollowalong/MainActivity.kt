@@ -1,9 +1,9 @@
 package com.example.composebookfollowalong
 import AllText
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material.Text
 
 import androidx.compose.runtime.*
 import androidx.compose.ui.tooling.preview.Preview
@@ -32,8 +32,14 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainPreview()
 {
-  AllText()
+    var URL = remember {
+        mutableStateOf("https://picsum.photos/200")
+    }
+  LoadImage2(URLval = URL.value){
+      URL.value = it
+  }
 
+    Text(text = URL.value)
 }
 
 
