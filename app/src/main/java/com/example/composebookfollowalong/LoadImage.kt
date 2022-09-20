@@ -34,6 +34,7 @@ fun ImageItem(webImg: WebImg) {
                 placeholder(R.drawable.tux)
                 transformations(CircleCropTransformation())
 
+
             }
         ),
         contentDescription = webImg.name,
@@ -78,6 +79,7 @@ fun LoadImage2( URLval : String , returnVal : (String) -> Unit )
                 diskCachePolicy(CachePolicy.DISABLED)
                 //This disables image saving in memory
                 memoryCachePolicy(policy = CachePolicy.DISABLED)
+
 
 
             }
