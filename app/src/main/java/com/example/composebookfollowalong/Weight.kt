@@ -26,18 +26,18 @@ fun WeightColumns()
     ) {
 
 
-        Column(modifier = Modifier.weight(1f))
+        Column(modifier = Modifier.weight(.1f))
         {
 
            TextField(value = "", onValueChange = {})
 
         }
-        Column(modifier = Modifier.weight(1f))
+        Column(modifier = Modifier.weight(.1f))
         {
 
             Text(text = "Testing", textAlign = TextAlign.Center, modifier = Modifier.align(CenterHorizontally))
         }
-        Column(modifier = Modifier.weight(1f))
+        Column(modifier = Modifier.weight(.1f))
         {
 
             Image(painter = painterResource(id = R.drawable.tux) , contentDescription = "Tux")
