@@ -32,19 +32,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainPreview()
 {
-    var URL = remember {
-        mutableStateOf("https://picsum.photos/200")
-    }
-    var iteration = remember {
-        mutableStateOf(0)
-    }
-  LoadImage2( URL.value){
-      URL.value = it
-      iteration.value += 1
-
-  }
-
-    Text(text = URL.value)
+    WeightColumns()
 }
 
 
