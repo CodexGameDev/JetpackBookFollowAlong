@@ -1,8 +1,6 @@
 package com.example.composebookfollowalong
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.LocalContentColor
@@ -22,6 +20,23 @@ fun FadedText(notFaded : String, faded : String)
         CompositionLocalProvider(LocalContentAlpha provides .3f) {
             Text(text = faded)
 
+        }
+    }
+}
+
+@Composable
+fun FadedPyramid(stringsList : ArrayList<String>)
+{
+    var counter = 0
+    Column(verticalArrangement = Arrangement.SpaceEvenly){
+
+        while (counter < stringsList.size)
+        {
+            CompositionLocalProvider(LocalContentAlpha provides 1 /(counter.toFloat() + 1)) {
+
+                Text(text = stringsList.get(counter))
+            }
+            counter += 1
         }
     }
 }

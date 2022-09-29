@@ -37,7 +37,13 @@ class MainActivity : ComponentActivity() {
 fun MainPreview()
 {
 
-    FadedText(notFaded = "Not faded", faded = "Faded")
+
+    var list : ArrayList<String> = ArrayList()
+    list.add("Heading")
+    list.add("SubHeading")
+    list.add("Body")
+    list.add("Footer")
+    FadedPyramid(stringsList = list)
 
 
 }
