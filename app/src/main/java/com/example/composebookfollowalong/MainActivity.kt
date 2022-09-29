@@ -36,10 +36,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainPreview()
 {
-    Row(horizontalArrangement = Arrangement.SpaceEvenly, modifier = Modifier.fillMaxWidth()) {
-        FadedText(notFaded = "Test1", faded = "")
-        Text("Testing")
-    }
+
+    FadedText(notFaded = "Not faded", faded = "Faded")
+
 
 }
 
