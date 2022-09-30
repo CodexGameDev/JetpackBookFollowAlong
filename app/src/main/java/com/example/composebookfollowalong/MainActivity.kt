@@ -1,15 +1,8 @@
 package com.example.composebookfollowalong
-import AllText
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.Text
-
 import androidx.compose.runtime.*
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
 
@@ -36,16 +29,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainPreview()
 {
-
-
-    var list : ArrayList<String> = ArrayList()
-    list.add("Heading")
-    list.add("SubHeading")
-    list.add("Body")
-    list.add("Footer")
-    FadedPyramid(stringsList = list)
-
-
+    var article = defaultArticle()
+    FadedArticle(textStuff = article)
 }
 
 
