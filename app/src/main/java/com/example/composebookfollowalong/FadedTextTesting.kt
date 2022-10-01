@@ -64,3 +64,14 @@ fun defaultArticle() : Article
 {
     return Article("Hurricane Ian live updates: Biden warns of 'substantial loss of life' as storm strengthens back into a hurricane", "President Joe Biden said Hurricane Ian may be responsible for \"substantial loss of life\" and could end up being the deadliest storm in Florida history.\n" + "\n" + "By Thursday night, the death toll had climbed to 12, although the state has refused to officially comment on deaths. " , Alignment.Start)
 }
+
+
+@Composable
+fun fadedText2(text : String , fadePercent : Float)
+{
+    CompositionLocalProvider(LocalContentAlpha provides fadePercent)
+    {
+        Text(text = text)
+    }
+
+}
