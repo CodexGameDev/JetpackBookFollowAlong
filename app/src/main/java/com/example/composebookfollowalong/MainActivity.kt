@@ -33,19 +33,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainPreview()
 {
-    Column( horizontalAlignment = Alignment.Start) {
-
-        var fade = 1f
-        while(fade > 0f) {
-            //This weird stuff is used to counteract the effect of float division inaccuracy
-            fadedText2(text = "Top Row " + ((fade + .001) * 100).toInt() + "%" , fadePercent = fade)
-            fade -= .1f
 
 
-        }
 
-
-    }
 }
 
 
