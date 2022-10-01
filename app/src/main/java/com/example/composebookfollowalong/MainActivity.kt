@@ -41,6 +41,7 @@ fun MainPreview()
             fadedText2(text = "Top Row " + ((fade + .001) * 100).toInt() + "%" , fadePercent = fade)
             fade -= .1f
 
+
         }
 
 
